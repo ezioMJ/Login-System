@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block home %}
+<form method="post" autocomplete="off">
+{% csrf_token %}
+<center>{{forms.as_p}}</center>
+<center><button type="submit">Save Details</button></center>
+</form>
+{% endblock %}

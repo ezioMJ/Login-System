@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block home %}
+{% for i in query %}
+<p>Name   :  {{i.mname}} <br>
+    Age    :  {{i.mage}} <br>
+    Email  :  {{i.memail}} <br>
+    Gender  : {{i.mgender}} <br>
+    Phone   : {{i.mphone}} <br>
+    Country : {{i.mcountry}} <br>
+</p>
+
+{% endfor %}
+
+{% endblock %}

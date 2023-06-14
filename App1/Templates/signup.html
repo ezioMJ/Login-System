@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block home %}
+
+<title>Sign Up</title>
+<center><h2>SignUp Page</h2></center>
+<li><a href="/login">Login</a></li>
+<form method = "post" autocomplete="off">
+    {% csrf_token %}
+    <center>{{forms.as_p}}
+    <button type="submit">Sign Up</button></center>
+    <center>{{txt}}</center>
+    
+</form>
+
+{% endblock %}
