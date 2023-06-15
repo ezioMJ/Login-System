@@ -8,6 +8,7 @@ def home(request):
     return render(request,"home.html")
 
 def login(request):
+    title = "Login"
     txt = ""
     forms = Login(request.POST or None)
     if request.method == "POST":
@@ -23,13 +24,14 @@ def login(request):
                     return redirect('user_home')
                 else:
                     txt = "Incorrect Password"
-                    return render(request,"txt.html",{"txt":txt})
+                    return render(request,"txt.html",{"txt":txt,"title":title})
             else:
                 txt = "You are not Registered here"
                 return render(request,"sign.html",{"txt":txt})
     return render(request,"login.html",{"forms":forms})
 
 def signup(request):
+    title  = "Signup"
     txt = ""
     forms = Signup(request.POST or None)
     if request.method == "POST":
@@ -44,7 +46,7 @@ def signup(request):
                 txt = "Registered Successfully"
             else:
                 txt = "Incorrect Password"
-    return render(request,"signup.html",{"forms":forms,"txt":txt})
+    return render(request,"signup.html",{"forms":forms,"txt":txt,"title":title})
 
 def user(request):
     email = request.session.get('email')
